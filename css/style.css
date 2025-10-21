@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url('assets/image1.png');
+    background-image: url('/assets/image1.png');
     color: #fff;
     overflow-x: hidden;
 }
