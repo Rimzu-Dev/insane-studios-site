@@ -1,27 +1,51 @@
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-image: url('/assets/image1.png');
-    size: 100%;
-    background-color: black;
-    color: #fff;
-    overflow-x: hidden;
+/* =========================
+   Global Reset & Variables
+========================= */
+:root {
+    --bg-main: #0b0b0f;
+    --bg-card: #14141a;
+    --accent: #ff2e2e;
+    --accent-glow: rgba(255, 46, 46, 0.5);
+    --text-main: #ffffff;
+    --text-muted: #b0b0c0;
+    --border-soft: rgba(255, 255, 255, 0.08);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, #11111a, var(--bg-main));
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =========================
+   Header & Navigation
+========================= */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .logo img {
-    height: 50px;
+    height: 42px;
 }
 
 nav ul {
@@ -30,87 +54,195 @@ nav ul {
     gap: 30px;
 }
 
-nav ul li a {
-    color: white;
+nav a {
     text-decoration: none;
+    color: var(--text-muted);
     font-weight: 500;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
-nav ul li a:hover {
-    color: #ff0000;
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
 }
 
+nav a:hover {
+    color: var(--text-main);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   Hero Section
+========================= */
 .hero {
-    height: 100vh;
-    background: url('../assets/background.jpg') center/cover no-repeat;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 0 20px;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
+        url("../assets/hero-bg.jpg") center / cover no-repeat;
 }
 
 .hero h1 {
-    font-size: 3em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin: 20px 0;
-}
-
-.btn {
-    background-color: #ff0000;
-    color: white;
-    padding: 10px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #cc0000;
-}
-
-section {
-    padding: 100px 60px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-h2 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
     margin-bottom: 40px;
 }
 
+/* =========================
+   Primary Button
+========================= */
+.btn {
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff2e2e, #ff5a5a);
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 0 25px var(--accent-glow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px var(--accent-glow);
+}
+
+/* =========================
+   Sections
+========================= */
+section {
+    padding: 80px 60px;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================
+   Games Section
+========================= */
 .game-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .game-card {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    transition: transform 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    height: 220px;
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3)),
+        url("../assets/rally-horizons-card.jpg") center / cover no-repeat;
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--border-soft);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.game-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
 }
 
 .game-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border-color: var(--accent);
 }
 
-footer {
+/* =========================
+   About Section
+========================= */
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px;
-    background: #111;
-    font-size: 0.9em;
-    color: #888;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   Contact Section
+========================= */
+#contact {
+    text-align: center;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    padding: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-soft);
+    background: #09090d;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    section {
+        padding: 60px 25px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
 }
