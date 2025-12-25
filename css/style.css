@@ -173,7 +173,7 @@ section h2::after {
     height: 220px;
     background:
         linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3)),
-        url("../assets/rally-horizons-card.jpg") center / cover no-repeat;
+        url("../assets/image2.png") center / cover no-repeat;
     border-radius: 16px;
     text-decoration: none;
     color: var(--text-main);
