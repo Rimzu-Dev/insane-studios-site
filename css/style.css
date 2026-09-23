@@ -234,6 +234,14 @@ footer {
     background: #09090d;
 }
 
+.links {
+    color: #00b8e6;
+}
+
+.links:hover {
+    color: #ff5a5a;
+}
+
 /* =========================
    Responsive
 ========================= */
