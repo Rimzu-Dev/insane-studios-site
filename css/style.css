@@ -45,7 +45,9 @@ header {
 }
 
 .logo img {
-    height: 42px;
+    height: 155px;
+    margin-bottom: -30%;
+    margin-top: -30%;
 }
 
 nav ul {
@@ -94,7 +96,7 @@ nav a:hover::after {
     padding: 0 20px;
     background:
         linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
-        url("../assets/hero-bg.jpg") center / cover no-repeat;
+        url("../assets/rallyhorizons.webp") center / cover no-repeat;
 }
 
 .hero h1 {
@@ -171,9 +173,7 @@ section h2::after {
     align-items: flex-end;
     padding: 25px;
     height: 220px;
-    background:
-        linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3)),
-        url("assets/image2.png") center / cover no-repeat;
+    background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
     border-radius: 16px;
     text-decoration: none;
     color: var(--text-main);
@@ -194,6 +194,14 @@ section h2::after {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     border-color: var(--accent);
+}
+
+.blockin {
+    background-color: #00f328;
+}
+
+.rallyhorizons {
+    background-color: #00b8e6;
 }
 
 /* =========================
