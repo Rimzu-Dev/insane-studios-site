@@ -1,72 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Official website for Insane Studios — creators of high-octane racing experiences.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insane Studios</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="assets/logo.ico" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="assets/logo.png" alt="Insane Studios Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <a class="brand" href="#home" aria-label="Insane Studios home">
+            <img class="logo" src="assets/logo.webp" alt="Insane Studios Logo">
+        </a>
+        <nav class="nav-buttons">
+            <button class="nav-btn" data-page="home">Home</button>
+            <button class="nav-btn" data-page="about">About</button>
+            <button class="nav-btn" data-page="projects">Projects</button>
+            <button class="nav-btn" data-page="mods">Mods</button>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Welcome to Insane Studios</h1>
-        <p>An independent indie game studio trying to make a name for itself.</p>
-        <a href="#games" class="btn">Explore Games</a>
-    </section>
+    <main>
+        <section class="page" id="page-home">
+            <div class="hero-banner">
+                <img class="main-image" src="assets/main.webp" alt="Main Image">
+                <h1>Welcome to Insane Studios</h1>
+                <p>Hello, my name is Gavin, most know me as Vibin or Loki, I'm a indie dev, mod dev, bass head, and I make websites, this is my portfolio of sorts, and where you can find my projects.</p>
+            </div>
+        </section>
 
-    <section id="games">
-        <h2>Our Games</h2>
-        <div class="game-list">
-            <a href="https://github.com/Rimzu-Dev/Blockin/releases" class="game-card blockin">
-                <h3>Blockin</h3>
-                <p>An opensource voxel based game writen in java.</p>
-            </a>
-            <a href="rally-horizons.html" class="game-card rallyhorizons">
-                <h3>Rally Horizons</h3>
-                <p>No Planed Release Date.</p>
-            </a>
-</a>
+        <section class="page" id="page-about">
+            <div class="page-content">
+                <h2>About</h2>
+                <p>I'm Gavin, also known as Vibin or Loki. I'm an indie developer, modder, bass head, and web developer. This is where I share who I am and what I do.</p>
+                <p>Replace this text with your story, skills, and anything else you want visitors to know.</p>
+            </div>
+        </section>
 
-            
-        </div>
-    </section>
+        <section class="page" id="page-projects">
+            <div class="page-content">
+                <h2>Projects</h2>
+                <p>A collection of the things I've built. Swap these placeholders out for your real projects.</p>
+                <div class="project-grid">
+                    <a class="project-card" href="#rally-horizons">
+                        <h3>Rally Horizons</h3>
+                        <p>Short description of this project and what it does.</p>
+                    </a>
+                    <article class="project-card">
+                        <h3>Project Two</h3>
+                        <p>Short description of this project and what it does.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Project Three</h3>
+                        <p>Short description of this project and what it does.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Insane Studios is a studio created by me, Gavin, Im a newer indie developer deticated to my pashion project Rally Horizons, with some other games along the way.</p>
-    </section>
+        <section class="page" id="page-mods">
+            <div class="page-content">
+                <h2>Mods</h2>
+                <p>Mods I've made for FiveM, GTA V, Farming Simulator, and BeamNG.drive. Filter by game, then open a mod to download it or preview what's still in the works.</p>
+                <div class="filter-bar" id="modFilters" role="group" aria-label="Filter mods by game"></div>
+                <div class="project-grid mod-grid" id="modGrid"></div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Have questions or collaboration ideas? Reach out at <a class="links" href="mailto:zedo06durham@gmail.com">mailto:zedo06durham@gmail.com</a></p>
-        <p>Or join our <a class="links" href="https://discord.gg/gKvuBt3rP">Discord</a></p>
-    </section>
+        <section class="page" id="page-mod">
+            <div class="game-hero">
+                <img class="game-hero-bg" id="modHeroBg" src="assets/main.webp" alt="">
+                <div class="game-hero-content">
+                    <a class="back-link" href="#mods">&larr; Back to Mods</a>
+                    <h2 id="modTitle">Mod</h2>
+                    <p class="game-tagline" id="modTagline"></p>
+                    <div class="game-meta" id="modMeta"></div>
+                    <div class="mod-actions" id="modActions"></div>
+                </div>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Insane Studios. All rights reserved.</p>
-    </footer>
+            <div class="page-content game-description">
+                <h3>About this Mod</h3>
+                <p id="modDescriptionText"></p>
+            </div>
 
-    <script src="js/main.js"></script>
+            <div class="page-content" id="modScreenshotsSection">
+                <div class="screenshots-head">
+                    <h3>Screenshots</h3>
+                    <button class="ghost-btn" id="modToggleShots" type="button">View all</button>
+                </div>
+                <div class="shot-grid" id="modShotGrid"></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-rally-horizons">
+            <div class="game-hero">
+                <img class="game-hero-bg" src="assets/main.webp" alt="">
+                <div class="game-hero-content">
+                    <a class="back-link" href="#projects">&larr; Back to Projects</a>
+                    <h2>Rally Horizons</h2>
+                    <p class="game-tagline">A rally racing game built by Insane Studios. Replace this line with your game's tagline.</p>
+                    <div class="game-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Price</span>
+                            <span class="meta-value">$19.99</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">ESRB</span>
+                            <span class="meta-value"><span class="esrb-badge">E</span> Everyone</span>
+                        </div>
+                        <div class="meta-item" aria-label="Rating: 4.5 out of 5">
+                            <span class="meta-label">Rating</span>
+                            <span class="meta-value">
+                                <span class="stars" style="--rating: 90%" aria-hidden="true"></span>
+                                <span class="rating-text">4.5 / 5</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content game-description">
+                <h3>About the Game</h3>
+                <p>Rally Horizons is a rally racing game by Insane Studios. Replace this description with what the game is about, its key features, the platforms it's on, and what makes it worth playing.</p>
+            </div>
+
+            <div class="page-content">
+                <div class="screenshots-head">
+                    <h3>Screenshots</h3>
+                    <button class="ghost-btn" id="toggleShots" type="button">View all 8</button>
+                </div>
+                <div class="shot-grid" id="shotGrid">
+                    <button class="shot" type="button" data-caption="Screenshot 1">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 1">
+                        <span class="shot-caption">Screenshot 1</span>
+                    </button>
+                    <button class="shot" type="button" data-caption="Screenshot 2">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 2">
+                        <span class="shot-caption">Screenshot 2</span>
+                    </button>
+                    <button class="shot" type="button" data-caption="Screenshot 3">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 3">
+                        <span class="shot-caption">Screenshot 3</span>
+                    </button>
+                    <button class="shot" type="button" data-caption="Screenshot 4">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 4">
+                        <span class="shot-caption">Screenshot 4</span>
+                    </button>
+                    <button class="shot extra" type="button" data-caption="Screenshot 5">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 5">
+                        <span class="shot-caption">Screenshot 5</span>
+                    </button>
+                    <button class="shot extra" type="button" data-caption="Screenshot 6">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 6">
+                        <span class="shot-caption">Screenshot 6</span>
+                    </button>
+                    <button class="shot extra" type="button" data-caption="Screenshot 7">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 7">
+                        <span class="shot-caption">Screenshot 7</span>
+                    </button>
+                    <button class="shot extra" type="button" data-caption="Screenshot 8">
+                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 8">
+                        <span class="shot-caption">Screenshot 8</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">&times;</button>
+        <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="Previous screenshot">&#10094;</button>
+        <figure class="lightbox-figure">
+            <img id="lightboxImage" src="" alt="">
+            <figcaption id="lightboxCaption"></figcaption>
+        </figure>
+        <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="Next screenshot">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-

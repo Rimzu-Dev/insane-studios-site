@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Screenshot placeholder">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#012f2f"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a6b66"/>
+      <stop offset="1" stop-color="#031515"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8ff0e6" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#8ff0e6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="800" cy="430" r="280" fill="url(#sun)"/>
+  <path d="M0 620 H1600 L1600 900 H0 Z" fill="url(#road)"/>
+  <path d="M0 620 H1600" stroke="#8fd6d6" stroke-opacity="0.5" stroke-width="3"/>
+  <g stroke="#8fd6d6" stroke-opacity="0.35" stroke-width="4">
+    <path d="M780 640 L760 900"/>
+    <path d="M820 640 L840 900"/>
+    <path d="M800 660 V900"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3">
+    <path d="M0 520 L700 620"/>
+    <path d="M1600 520 L900 620"/>
+  </g>
+  <text x="800" y="300" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="76" fill="#eafcfb" fill-opacity="0.92">SCREENSHOT</text>
+  <text x="800" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" letter-spacing="8" fill="#8fd6d6">REPLACE WITH YOUR IMAGE</text>
+</svg>
