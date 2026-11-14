@@ -35,7 +35,8 @@ const mods = [
     version: "1.0.0",
     updated: "Released",
     downloadUrl: "https://www.gta5-mods.com/vehicles/single-cab-bravado-bison",
-    screenshots: 6,
+    cover: "assets/Mods/bison_single.webp",
+    images: ["assets/Mods/bison_single.webp"],
   },
   {
     id: "qbcore-trucking-jobs",
@@ -48,7 +49,12 @@ const mods = [
     version: "0.8.0 (WIP)",
     updated: "Released",
     downloadUrl: "https://cdn.discordapp.com/attachments/1500051076089511966/1500407944615952394/trucking-jobs.zip?ex=6af8164a&is=6af6c4ca&hm=9f60b166fee6907e669b9d22225c09d9197791dcc79b9abf5167f1bee09b652e&",
-    screenshots: 5,
+    cover: "assets/Mods/QB_Trucking/1.webp",
+    images: [
+      "assets/Mods/QB_Trucking/1.webp",
+      "assets/Mods/QB_Trucking/2.webp",
+      "assets/Mods/QB_Trucking/3.webp",
+    ],
   },
   {
     id: "computer-interface",
@@ -61,7 +67,8 @@ const mods = [
     version: "In development",
     updated: "In progress",
     downloadUrl: "",
-    screenshots: 4,
+    cover: "assets/Mods/computer.webp",
+    images: ["assets/Mods/computer.webp"],
   },
   {
     id: "pj-trailer-pack",
@@ -74,7 +81,8 @@ const mods = [
     version: "In development",
     updated: "In progress",
     downloadUrl: "",
-    screenshots: 4,
+    cover: "assets/Mods/pj.webp",
+    images: ["assets/Mods/pj.webp"],
   },
   {
     id: "loki-4thgen",
@@ -87,7 +95,8 @@ const mods = [
     version: "In development",
     updated: "In progress",
     downloadUrl: "",
-    screenshots: 5,
+    cover: "assets/Mods/loki_ram_4th/1.webp",
+    images: ["assets/Mods/loki_ram_4th/1.webp"],
   },
 ];
 
@@ -216,6 +225,7 @@ function renderMods() {
 
       return `
         <a class="project-card mod-card${available ? "" : " unavailable"}" href="#mod-${mod.id}">
+          <img class="mod-thumb" src="${mod.cover}" alt="${mod.name}" loading="lazy">
           <div class="mod-card-top">
             <h3>${mod.name}</h3>
             <span class="mod-badge ${available ? "live" : "coming"}">${available ? "Released" : "Unreleased"}</span>
@@ -325,16 +335,19 @@ const modToggleShots = document.getElementById("modToggleShots");
 const modScreenshotsSection = document.getElementById("modScreenshotsSection");
 
 function buildModShots(mod) {
-  return Array.from({ length: mod.screenshots || 0 }, (_, index) => {
-    const number = index + 1;
-    const extra = index >= 4 ? " extra" : "";
-    const caption = `${mod.name} screenshot ${number}`;
-    return `
-      <button class="shot${extra}" type="button" data-caption="${caption}">
-        <img class="placeholder" src="assets/screenshot-placeholder.svg" alt="${caption}">
-        <span class="shot-caption">Screenshot ${number}</span>
-      </button>`;
-  }).join("");
+  const images = mod.images || [];
+  return images
+    .map((src, index) => {
+      const number = index + 1;
+      const extra = index >= 4 ? " extra" : "";
+      const caption = `${mod.name} screenshot ${number}`;
+      return `
+        <button class="shot${extra}" type="button" data-caption="${caption}" data-full="${src}">
+          <img src="${src}" alt="${caption}" loading="lazy">
+          <span class="shot-caption">Screenshot ${number}</span>
+        </button>`;
+    })
+    .join("");
 }
 
 function renderModDetail(modId) {
@@ -346,7 +359,7 @@ function renderModDetail(modId) {
 
   modTitle.textContent = mod.name;
   modTagline.textContent = mod.tagline;
-  modHeroBg.src = "assets/main.webp";
+  modHeroBg.src = mod.cover || "assets/main.webp";
   modHeroBg.alt = "";
 
   modMeta.innerHTML = `
@@ -381,7 +394,7 @@ function renderModDetail(modId) {
   modDescriptionText.textContent = mod.description;
 
   if (modScreenshotsSection) {
-    modScreenshotsSection.hidden = !mod.screenshots;
+    modScreenshotsSection.hidden = !(mod.images && mod.images.length);
   }
   modShotGrid.innerHTML = buildModShots(mod);
   setupGallery(modShotGrid, modToggleShots);
