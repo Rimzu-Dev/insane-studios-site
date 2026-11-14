@@ -7,4 +7,4 @@ https://Rimzu-Dev.github.io/insane-studios-site/
 
 
 ---
-© 2025 Insane Studios. All rights reserved.
+© 2026 Insane Studios. All rights reserved.
