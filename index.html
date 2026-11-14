@@ -35,28 +35,56 @@
         <section class="page" id="page-about">
             <div class="page-content">
                 <h2>About</h2>
-                <p>I'm Gavin, also known as Vibin or Loki. I'm an indie developer, modder, bass head, and web developer. This is where I share who I am and what I do.</p>
-                <p>Replace this text with your story, skills, and anything else you want visitors to know.</p>
+                <p>I'm Gavin, also known as Vibin or Loki. I'm an indie developer, modder, 3D modeler, and web developer, and the person behind Insane Studios. I'm 20 now and I've been making things on a computer for about as long as I can remember caring about it.</p>
+                <p>I started with web development at 15, which means five years of learning by doing, from small static pages to full single-page sites like this one. At 17 I picked up 3D modeling so I could actually build the things I was picturing, and since late 2023 I've been making games, turning those models and ideas into playable projects like Rally Horizons and Blockin.</p>
+            </div>
+
+            <div class="page-content">
+                <h3>What I Do</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Web Development</h4>
+                        <p>Building responsive websites and clean, no-nonsense interfaces. Started at 15, so that's about five years of hands-on experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>3D Modeling</h4>
+                        <p>Modeling assets for games, mods, and whatever else needs it. Been at it since 17, roughly three years of practice.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Game Development</h4>
+                        <p>Building my own games from the ground up since late 2023, handling everything from gameplay to UI to the assets that go in them.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Modding</h4>
+                        <p>Making mods for FiveM, GTA V, Farming Simulator, and BeamNG.drive. Some are released, and a few are still in the works.</p>
+                    </div>
+                </div>
+                <p>These days I split my time between web work, modeling, and building out my own games. Insane Studios is where all of it comes together, so if you want to see what I've shipped, take a look at my projects and mods.</p>
             </div>
         </section>
 
         <section class="page" id="page-projects">
             <div class="page-content">
                 <h2>Projects</h2>
-                <p>A collection of the things I've built. Swap these placeholders out for your real projects.</p>
+                <p>A collection of the things I've built and am working on.</p>
                 <div class="project-grid">
-                    <a class="project-card" href="#rally-horizons">
-                        <h3>Rally Horizons</h3>
-                        <p>Short description of this project and what it does.</p>
+                    <a class="project-card project-card-media" href="#rally-horizons">
+                        <img class="project-thumb" src="assets/Rally Horizons/rallyhorizons.webp" alt="Rally Horizons">
+                        <div class="project-card-body">
+                            <h3>Rally Horizons</h3>
+                            <p>A rally racing game built by Insane Studios.</p>
+                        </div>
                     </a>
-                    <article class="project-card">
-                        <h3>Project Two</h3>
-                        <p>Short description of this project and what it does.</p>
-                    </article>
-                    <article class="project-card">
-                        <h3>Project Three</h3>
-                        <p>Short description of this project and what it does.</p>
-                    </article>
+                    <a class="project-card project-card-media" href="#blockin">
+                        <img class="project-thumb" src="assets/blockin.png" alt="Blockin">
+                        <div class="project-card-body">
+                            <div class="project-card-top">
+                                <h3>Blockin</h3>
+                                <span class="project-badge">Alpha</span>
+                            </div>
+                            <p>Alpha release — playable, but still has bugs.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -98,7 +126,7 @@
 
         <section class="page" id="page-rally-horizons">
             <div class="game-hero">
-                <img class="game-hero-bg" src="assets/main.webp" alt="">
+                <img class="game-hero-bg" src="assets/Rally Horizons/rallyhorizons.webp" alt="">
                 <div class="game-hero-content">
                     <a class="back-link" href="#projects">&larr; Back to Projects</a>
                     <h2>Rally Horizons</h2>
@@ -131,45 +159,128 @@
             <div class="page-content">
                 <div class="screenshots-head">
                     <h3>Screenshots</h3>
-                    <button class="ghost-btn" id="toggleShots" type="button">View all 8</button>
+                    <button class="ghost-btn" id="toggleShots" type="button">View all 3</button>
                 </div>
                 <div class="shot-grid" id="shotGrid">
-                    <button class="shot" type="button" data-caption="Screenshot 1">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 1">
+                    <button class="shot" type="button" data-caption="Rally Horizons screenshot 1">
+                        <img src="assets/Rally Horizons/image1.png" alt="Rally Horizons screenshot 1">
                         <span class="shot-caption">Screenshot 1</span>
                     </button>
-                    <button class="shot" type="button" data-caption="Screenshot 2">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 2">
+                    <button class="shot" type="button" data-caption="Rally Horizons screenshot 2">
+                        <img src="assets/Rally Horizons/image2.png" alt="Rally Horizons screenshot 2">
                         <span class="shot-caption">Screenshot 2</span>
                     </button>
-                    <button class="shot" type="button" data-caption="Screenshot 3">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 3">
-                        <span class="shot-caption">Screenshot 3</span>
+                    <button class="shot" type="button" data-caption="Rally Horizons key art">
+                        <img src="assets/Rally Horizons/rallyhorizons.webp" alt="Rally Horizons key art">
+                        <span class="shot-caption">Key art</span>
                     </button>
-                    <button class="shot" type="button" data-caption="Screenshot 4">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 4">
-                        <span class="shot-caption">Screenshot 4</span>
-                    </button>
-                    <button class="shot extra" type="button" data-caption="Screenshot 5">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 5">
-                        <span class="shot-caption">Screenshot 5</span>
-                    </button>
-                    <button class="shot extra" type="button" data-caption="Screenshot 6">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 6">
-                        <span class="shot-caption">Screenshot 6</span>
-                    </button>
-                    <button class="shot extra" type="button" data-caption="Screenshot 7">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 7">
-                        <span class="shot-caption">Screenshot 7</span>
-                    </button>
-                    <button class="shot extra" type="button" data-caption="Screenshot 8">
-                        <img src="assets/screenshot-placeholder.svg" alt="Rally Horizons screenshot 8">
-                        <span class="shot-caption">Screenshot 8</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-blockin">
+            <div class="game-hero">
+                <img class="game-hero-bg" src="assets/blockin.png" alt="">
+                <div class="game-hero-content">
+                    <a class="back-link" href="#projects">&larr; Back to Projects</a>
+                    <h2>Blockin</h2>
+                    <p class="game-tagline">A custom-built voxel crafting and game project featuring a clean, modern UI, inventory management, and block-building mechanics.</p>
+                    <div class="game-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Status</span>
+                            <span class="meta-value">Alpha</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Version</span>
+                            <span class="meta-value">V0.0724</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Updated</span>
+                            <span class="meta-value">In progress</span>
+                        </div>
+                    </div>
+                    <div class="mod-actions">
+                        <a class="download-btn" href="https://github.com/Rimzu-Dev/Blockin/releases" target="_blank" rel="noopener">Download on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content game-description">
+                <h3>About the Game</h3>
+                <p>Blockin is a custom-built voxel crafting and game project focused on a clean, modern experience. It combines inventory management and crafting grids with classic block placement, breaking, and material management, all wrapped in custom-designed panels and HUD elements.</p>
+                <p>Blockin also ships with a custom launcher that starts the precompiled game seamlessly, so you can get straight to building. Compiling from source is reserved for advanced developers and mod developers.</p>
+            </div>
+
+            <div class="page-content">
+                <h3>Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Precompiled Launcher</h4>
+                        <p>Starts the precompiled game right out of the box, with no setup required.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Modern UI and HUD</h4>
+                        <p>Custom-designed inventory and crafting grids with clean panel styling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Voxel Mechanics</h4>
+                        <p>Classic block placement, breaking, and material management.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Multiplayer (In Development)</h4>
+                        <p>Multiplayer is in development and currently has bugs. Expect issues while it is being worked on.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Community Driven</h4>
+                        <p>Open for community code contributions, pull requests, and collaborative development.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Advanced and Mod Developers</h4>
+                        <p>Compiling from source is available for advanced developers and mod developers who want to modify the game.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <h3>Getting Started</h3>
+                <ol class="steps-list">
+                    <li>Clone or download the repository.</li>
+                    <li>Run the launcher to start the precompiled game.</li>
+                    <li>Launch Blockin and start building.</li>
+                </ol>
+                <p>Advanced developers and mod developers can compile from source if they want to modify the game.</p>
+            </div>
+
+            <div class="page-content">
+                <h3>Licensing and Usage Policy</h3>
+                <p>Blockin is source-available and non-commercial. You are free to view, learn from, and contribute to the project, but commercial use, monetization, or selling of this code or compiled builds is strictly prohibited.</p>
+                <p>Contributions are welcome. If you would like to chip in, submit a pull request on the <a class="inline-link" href="https://github.com/Rimzu-Dev/Blockin" target="_blank" rel="noopener">GitHub repository</a>.</p>
+            </div>
+
+            <div class="page-content">
+                <div class="screenshots-head">
+                    <h3>Screenshots</h3>
+                    <button class="ghost-btn" id="blockinToggleShots" type="button" hidden>View all 1</button>
+                </div>
+                <div class="shot-grid" id="blockinShotGrid">
+                    <button class="shot" type="button" data-caption="Blockin key art">
+                        <img src="assets/blockin.png" alt="Blockin key art">
+                        <span class="shot-caption">Key art</span>
                     </button>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-copy">&copy; <span id="footerYear">2026</span> Insane Studios. All rights reserved.</p>
+            <div class="footer-links">
+                <a class="footer-link" href="https://www.instagram.com/insane_studios_" target="_blank" rel="noopener">Instagram</a>
+                <a class="footer-link" href="https://discord.gg/AqpM3hmfSy" target="_blank" rel="noopener">Discord</a>
+            </div>
+        </div>
+    </footer>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
         <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">&times;</button>

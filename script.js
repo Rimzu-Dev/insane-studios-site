@@ -1,6 +1,9 @@
 const pages = [...document.querySelectorAll(".page")];
 const navButtons = [...document.querySelectorAll(".nav-btn")];
 
+const footerYear = document.getElementById("footerYear");
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 const gameLabels = {
   fivem: "FiveM",
   "gtav-sp": "GTA V SP",
@@ -102,6 +105,7 @@ function parseHash() {
 function setActiveButton(id) {
   let activeId = id;
   if (id === "rally-horizons") activeId = "projects";
+  if (id === "blockin") activeId = "projects";
   if (id === "mod") activeId = "mods";
   navButtons.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.page === activeId);
@@ -327,7 +331,7 @@ function buildModShots(mod) {
     const caption = `${mod.name} screenshot ${number}`;
     return `
       <button class="shot${extra}" type="button" data-caption="${caption}">
-        <img src="assets/screenshot-placeholder.svg" alt="${caption}">
+        <img class="placeholder" src="assets/screenshot-placeholder.svg" alt="${caption}">
         <span class="shot-caption">Screenshot ${number}</span>
       </button>`;
   }).join("");
@@ -384,6 +388,7 @@ function renderModDetail(modId) {
 }
 
 setupGallery(document.getElementById("shotGrid"), document.getElementById("toggleShots"));
+setupGallery(document.getElementById("blockinShotGrid"), document.getElementById("blockinToggleShots"));
 
 window.addEventListener("hashchange", () => handleRoute());
 handleRoute();
